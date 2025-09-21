@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+        :root {
+            --primary: #fffffa;
+            --text-light: rgba(255, 255, 255, 0.458);
+            --bg-color: linear-gradient(45deg, rgb(108, 108, 198), rgb(195, 130, 195), rgb(215, 152, 163));
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins";
+        }
+        .container {
+            height: 100vh;
+            width: 100vw;
+            background: var(--bg-color);
+            align-content: center;
+            justify-items: center;
+        }
+        .clock {
+            width: 90%;
+            max-width: 600px;
+            aspect-ratio: 3/1;
+            box-shadow: 0px 0px 20px 15px rgba(0, 0, 0, 0.234);
+            background-color: black;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            justify-content: space-evenly;
+        }
+        .content{
+            font-size: 3.6rem;
+            width: 20%;
+            font-weight: bold;
+            text-align: center;
+        }
+        .heading {
+            font-size: x-small;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        .seperator {
+            font-size: larger;
+            font-weight: bold;
+            color: var(--text-light);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="clock">
+
+            <div class="content">
+                <div id="day">WE</div>
+                <div class="heading">DAY</div>
+            </div><div class="seperator">:</div>
+
+            <div class="content">
+                <div id="hour">1</div>
+                <div class="heading">HOURS</div>
+            </div><div class="seperator">:</div>
+
+            <div class="content">
+                <div id="min">59</div>
+                <div class="heading">MINUTES</div>
+            </div><div class="seperator">:</div>
+
+            <div class="content">
+                <div id="sec">43</div>
+                <div class="heading">SECONDS</div>
+
+        </div>
+    </div>
+
+    <script>
+        const day = document.getElementById("day");
+        const hour = document.getElementById("hour");
+        const min = document.getElementById("min");
+        const sec = document.getElementById("sec");
+
+        setInterval(()=> {
+            let currDate = new Date;
+            day.innerText = currDate.toDateString().slice(0, 2).toUpperCase()
+            hour.innerText = currDate.getHours()
+            min.innerText = currDate.getMinutes()
+            sec.innerText = currDate.getSeconds()
+        }, 1000)
+
+        // console.log(currDate)
+        // console.log(currDate.getHours())
+        // console.log(currDate.getMinutes())
+        // console.log(currDate.getSeconds())
+        // console.log(currDate.getMilliseconds())
+    </script>
+</body>
+</html>
